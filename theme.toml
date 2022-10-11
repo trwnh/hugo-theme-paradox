@@ -1,5 +1,5 @@
 name = "paradox"
-license = "MIT"
+license = "GPLv3"
 licenselink = "https://github.com/trwnh/hugo-theme-paradox/blob/main/LICENSE"
 description = "A clean and simple documentation theme with all the right features and none of the wrong ones."
 homepage = "http://github.com/trwnh/hugo-theme-paradox"

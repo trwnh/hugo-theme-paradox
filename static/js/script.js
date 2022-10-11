@@ -1,6 +1,6 @@
 /*
 Use a window's inner dimensions for viewport units.
-This fixes
+This fixes some mobile bugs
 */
 
 var root = document.documentElement;
