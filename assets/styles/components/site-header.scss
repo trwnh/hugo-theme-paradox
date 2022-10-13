@@ -1,0 +1,33 @@
+.site-masthead {
+	display: inline-flex;
+	flex-flow: row;
+	align-items: center;
+	gap: 1em;
+	padding: 4px;
+}
+.site-icon {
+	height: 2em;
+}
+.site-title {
+	font-weight: 900;
+	letter-spacing: -0.5px;
+	font-size: 1.25em;
+}
+.site-masthead, .site-masthead:visited {
+	color: inherit
+}
+
+.site-masthead:focus {
+	color: var(--primary-accent-text);		
+}
+
+.site-header {padding: 1em 0;}
+
+.site-header a {
+	text-decoration: none;
+}
+.site-header .container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}

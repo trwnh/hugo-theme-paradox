@@ -1,0 +1,29 @@
+a:link {
+	transition: all 0.1s ease-out;
+	color: var(--link-color);
+	text-decoration-thickness: .0625rem;
+	text-underline-offset: 0.125em;
+	text-decoration-skip-ink: none;
+}
+
+a:visited {
+	color: var(--link-visited);
+}
+
+a:focus {
+	outline: none;
+	background: var(--primary-accent);
+	color: var(--primary-accent-text);
+	border-radius: 2px;
+	text-decoration: none;
+	padding: 4px;
+}
+
+a:hover {
+	text-decoration-thickness: 0.125em;
+	text-underline-offset: 0.25em;
+}
+
+@media (prefers-reduced-motion) {
+	a:link {transition: none}
+}

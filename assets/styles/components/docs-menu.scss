@@ -1,0 +1,56 @@
+/* navigation menu toggle */
+
+.toggle-menu {
+	display: none;
+}
+
+.toggle-menu:not(:checked) ~ .menu {
+	display: none;
+}
+.toggle-menu__label {
+	display: flex;
+	align-items: center;
+	font-weight: 900;
+	gap: 0.25rem;
+	text-transform: uppercase;
+}
+
+/* navigation menu */
+
+.docs-nav {
+	padding: 1em 0;
+	.menu {
+		margin-top: 1em;
+		> li {
+			margin-bottom: 1em;
+		}
+	}
+	li {line-height: 2}
+	.sub-menu {
+		margin-left: 1em;
+		li::marker {
+			content: '⟣ ';
+		}
+		.sub-menu li::marker {
+			content: '↳ ';
+		}
+	}
+	.section-title > a {
+		font-weight: 700;
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+/* top of menu link should show only when focused */
+
+#menu {margin-bottom: 1em;}
+#menu:not(:focus) {
+	clip: rect(0 0 0 0); 
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap; 
+	width: 1px;
+}

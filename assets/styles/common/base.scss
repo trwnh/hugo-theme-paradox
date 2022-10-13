@@ -1,0 +1,45 @@
+$site-max-width: 80rem;
+
+:root {
+	--site-max-width: #{$site-max-width};
+	--nav-height: 4rem;
+	--header-height: 4.5rem;
+	--footer-height: 3rem;
+}
+
+html {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	scroll-behavior: smooth;
+	background: var(--ui-background);
+	color: var(--ui-text);
+}
+
+/* Single column layout, where main content stretches to fill. */
+body {
+	display: flex;
+	flex-flow: column;
+	min-height: calc(var(--vh, 1vh) * 100);
+	max-width: 100vw;
+	margin: auto;
+}
+main {flex-grow: 1;}
+
+/*
+Sections are primary block units, usually of type <section>.
+Containers are an immediate child <div>, purely for constraining width.
+*/
+.section {
+	padding: 2em 0; /* we apply a vertical padding only to sections */
+}
+.container {
+	width: 100%;
+	max-width: var(--site-max-width);
+	margin: 0 auto;
+	padding: 0 1em; /* and we apply a horizontal padding only to containers */
+}
+
+/* Ensure consistent colors for text selection */
+::selection {
+	background: var(--primary-accent);
+	color: var(--primary-accent-text);
+}

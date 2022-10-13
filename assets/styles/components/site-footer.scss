@@ -1,0 +1,11 @@
+.site-footer {
+	height: var(--footer-height);
+	display: flex;
+	align-items: center;
+}
+.site-footer hr {display: none;}
+.site-footer .container {
+	display: flex;
+	justify-content: space-between;
+}
+.breadcrumbs {display: flex; flex-flow: row wrap;}

@@ -1,0 +1,173 @@
+/* single layout */
+
+.page {
+	.page-title {margin-top: 0;}
+	.lastmod {
+		margin-top: 1em;
+		color: var(--ui-text-muted)
+	}
+	.language-list {
+		display: flex;
+		flex-flow: wrap;
+		list-style: none;
+	}
+}
+
+/* [responsive] re-show the navigation menu as a sidebar */
+
+@media (min-width: 60rem) {
+	body {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		height: calc(100 * var(--vh, 1vh));
+	}
+	.site-header, .scroll-margin, .site-footer {
+		grid-column: span 2
+	}
+	.docs-nav {
+		grid-column: 1;
+		height: calc(100 * var(--vh, 1vh) - var(--header-height) - var(--footer-height));
+		overflow-y: auto;
+		padding: 0;
+	}
+	main {
+		grid-column: 2;
+		height: calc(100 * var(--vh, 1vh) - var(--header-height) - var(--footer-height));
+		overflow-y: auto;
+		scrollbar-width: none;
+	}
+	.docs-nav::-webkit-scrollbar,
+	main::-webkit-scrollbar {
+		display: none;
+	}
+
+	.docs-nav .menu {margin-top: 0;}
+
+	.page-header {
+		padding: 0;
+	}
+ 
+	/* toggle is no longer needed */
+
+	.toggle-menu {
+		display: none;
+	}
+	
+	.toggle-menu:not(:checked) ~ .menu {
+		display: unset;
+	}
+	.toggle-menu__label {
+		display: none;
+	}
+
+}
+
+/* [responsive] move the toc to its own column */
+
+@media (min-width: 75rem) {
+	body {
+		grid-template-columns: 20rem 1fr;
+	}
+	.page {
+		display: grid;
+		grid-template-columns: 40rem 1fr;
+	}
+	.page .page-header {
+		grid-column: span 2
+	}
+	.page .section {
+		grid-column: 1;
+	}
+	.page .toc {
+		grid-column: 2;
+		grid-row: span 2;
+		padding: 0;
+	}
+	.page .toc .container {
+		width: 15rem;
+		margin: 0;
+		position: fixed;
+		top: var(--header-height);
+		max-height: calc(100vh - var(--header-height) - var(--footer-height));
+		overflow-y: auto;
+	}
+}
+
+/* [responsive] let the <main> expand until max width of site */
+
+@media (min-width: 80rem) {
+
+	.page {
+		grid-template-columns: 1fr 20rem; /* toc now visually balanced with menu */
+	}
+
+	/* start limiting content since it can exceed 80ch now */
+
+	.page .content .container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(80ch, 1fr) minmax(0, 1fr);
+		> * {
+			grid-column: 2;
+		}
+		> img
+		{
+			grid-column: 1 / span 3;
+		}
+	}
+
+	/* also make the page header line up */
+
+	.page .page-header {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(80ch, 1fr) minmax(0, 1fr);
+		> .container {
+			grid-column: 2;
+			padding: 0;
+		}
+	}
+
+}
+
+/* [responsive] <main> has reached maxwidth */
+
+@media (min-width: $site-max-width + 40rem) {
+
+	/* we need to grow equally now */
+
+	body {
+		grid-template-columns: 1fr var(--site-max-width, $site-max-width) 1fr;
+	}
+
+	.site-header,
+	.scroll-margin,
+	.site-footer
+	{
+		grid-column: 2
+	}
+
+	/* the page and toc take their space */
+
+	main {grid-column: 2 / span 2;}
+
+	/* except now the page is fixed to maxwidth and the toc can "grow" */
+
+	.page {
+		grid-template-columns: var(--site-max-width, $site-max-width) 1fr;
+	}
+
+	/* we don't actually want it to grow, though! just stick to the side */
+
+	.page {position: relative;}
+	.page .toc {
+		position: sticky;
+		top: 0;
+	}
+
+	/* also the menu sidebar should stick to the other side */
+	.docs-nav {
+		position: sticky;
+		width: 20rem;
+		place-self: end;
+	}
+
+}

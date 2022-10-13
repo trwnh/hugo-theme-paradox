@@ -1,0 +1,24 @@
+@import "common/reset";
+@import "common/colors";
+@import "common/base";
+@import "common/page";
+
+@import "components/site-header";
+
+.header-nav,
+.docs-nav,
+.site-footer,
+.edit-on-github,
+.footnote-backref
+{
+	display: none;
+}
+.page-header {padding: 0;}
+
+.page abbr[title]::after {
+	content: " (" attr(title) ") ";
+}
+
+a[href^="http"]:after {
+	content: " (" attr(href) ") ";
+}

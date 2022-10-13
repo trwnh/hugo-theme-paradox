@@ -1,0 +1,182 @@
+.page {
+	/* text */
+	h1 {font-size: 1.8em}
+	h2 {font-size: 1.6em}
+	h3 {font-size: 1.423em}
+	h4 {font-size: 1.265em}
+	h5 {font-size: 1.125em}
+	h6 {font-size: 1em}
+	h1, h2, h3, h4, h5, h6 {
+		line-height: 1.2;
+		margin-bottom: 1rem;
+		margin-top: 2rem;
+		font-weight: 700;
+	}
+	p {
+		line-height: 2;
+		margin-bottom: 1em;
+	}
+	a {
+		word-wrap: break-word;
+	}
+	/* semantics */ 
+	em {font-style: italic}
+	strong {font-weight: 700}
+	/* text formatting */
+	--script-size: 0.65em;
+	sup {
+		position: relative;
+		font-size: var(--script-size);
+		top: -1em;
+	}
+	sub {
+		position: relative;
+		font-size: var(--script-size);
+	}
+	@supports #{'selector\(:has(kbd))'} {
+		/* style individual keys only (for the innermost <kbd> element) */
+		kbd kbd,
+		kbd:not(:has(kbd)) {
+			font-family: monospace;
+			padding: 0.25em;
+			background: var(--ui-overlay);
+			color: var(--ui-overlay-text);
+		}
+	}
+	@supports not #{'selector\(:has(kbd))'} {
+		/* style the entire key sequence */
+		kbd {
+			font-family: monospace;
+			padding: 0.25em;
+			background: var(--ui-overlay);
+			color: var(--ui-overlay-text);
+		}
+		/* and prevent double-styling for nested keys */
+		kbd kbd {
+			background: none;
+		}
+	}
+	mark {
+		background: var(--primary-accent-transparent);
+		color: var(--ui-text);
+		--pad-x-highlight: 0.125em;
+		padding-left: var(--pad-x-highlight);
+		padding-right: var(--pad-x-highlight);
+	}
+	abbr[title]:after {
+		content: '?';
+		font-size: var(--script-size);
+		color: var(--ui-text-muted);
+	}
+	/* lists */
+	ul {list-style: disc; margin: 1em 0;}
+	li {margin-bottom: 1em; line-height: 1.4; margin-left: 1em;}
+	ol {list-style: decimal; margin: 1em 0;}
+	dl {margin: 1em 0; line-height: 1.4;}
+	dt {font-weight: 700;}
+	dd {margin-left: 1em;}
+	/* block elements */
+	img {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+	blockquote {
+		font-style: italic;
+		font-size: 1em;
+		margin: 1em 0;
+		border-left: 0.25rem solid var(--ui-text-bold);
+		padding-left: 0.75em;
+		line-height: 1.4;
+	}
+	pre {
+		font-family: monospace;
+		background: #333;
+		color: white;
+		padding: 1em;
+		line-height: 1.4;
+		overflow-x: scroll;
+		margin-bottom: 1em;
+	}
+	code {
+		font-family: monospace;
+	}
+	/* figures */
+	figure {
+		margin-bottom: 1em;
+	}
+	figure img {
+		width: 100%;
+		margin-bottom: -0.125em;
+	}
+	figcaption {
+		background: #212121;
+		color: white;
+		font-style: italic;
+		padding: 1em;
+		font-size: 0.8em;
+		line-height: 1.2;
+	}
+	/* tables */
+	table {text-align: center;}
+	thead {font-weight: 700;}
+	th, td {
+		border: 1px solid black;
+		padding: 0.5em;
+	}
+	/* {{<hint>}} shortcode */
+	.hint {
+		padding: 1em;
+		line-height: 2;
+	}
+	.hint,
+	.hint.info,
+	.hint.tip {
+		background: rgba(142, 226, 142, 0.2);
+		border-left: 4px solid rgb(142, 226, 142);
+	}
+	
+	.hint.warning {
+		background: rgba(218, 226, 142, 0.2);
+		border-left: 4px solid rgb(218, 226, 142);
+	}
+	
+	.hint.danger {
+		background: rgba(226, 142, 142, 0.2);
+		border-left: 4px solid rgb(226, 142, 142);
+	}
+	/* hugo-specific citation footnote */
+	cite sup {
+		position: inherit;
+		font-size: inherit;
+		a {
+			padding: 0.25em;
+		}
+		&:before {
+			content: ' [';
+		}
+		&:after {
+			content: ']';
+		}
+	}
+	/* toc */
+	.toc-title {
+		margin-bottom: 0.5em;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: var(--ui-text-muted);
+	}
+	#TableOfContents {
+		ul {
+			list-style: none;
+			margin: 0;
+		}
+		li {
+			margin: 0;
+			line-height: 1.5;
+		}
+		li > ul { /* indent subheadings */
+			margin: 0;
+			margin-left: 1em;
+		}
+	}
+}
