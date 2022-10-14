@@ -84,10 +84,9 @@
 		padding: 0;
 	}
 	.page .toc .container {
-		width: 15rem;
 		margin: 0;
-		position: fixed;
-		top: var(--header-height);
+		position: sticky;
+		top: 0;
 		max-height: calc(100vh - var(--header-height) - var(--footer-height));
 		overflow-y: auto;
 	}
@@ -105,7 +104,7 @@
 
 	.page .content .container {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(80ch, 1fr) minmax(0, 1fr);
+		grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
 		> * {
 			grid-column: 2;
 		}
@@ -119,7 +118,7 @@
 
 	.page .page-header {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(80ch, 1fr) minmax(0, 1fr);
+		grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
 		> .container {
 			grid-column: 2;
 			padding: 0;
@@ -128,31 +127,27 @@
 
 }
 
-/* [responsive] <main> has reached maxwidth */
+/* [responsive] fixed layout after reaching maxwidth */
 
-@media (min-width: $site-max-width + 40rem) {
-
-	/* we need to grow equally now */
+@media (min-width: $site-max-width) {
 
 	body {
-		grid-template-columns: 1fr var(--site-max-width, $site-max-width) 1fr;
+		grid-template-columns: 1fr 20rem calc(var(--site-max-width) - 20rem) 1fr
 	}
 
+	.docs-nav {grid-column: 2;}
+	main {grid-column: 3;}
 	.site-header,
-	.scroll-margin,
-	.site-footer
+	.site-footer,
+	.scroll-margin
 	{
-		grid-column: 2
+		grid-column: 2 / span 2;
 	}
-
-	/* the page and toc take their space */
-
-	main {grid-column: 2 / span 2;}
 
 	/* except now the page is fixed to maxwidth and the toc can "grow" */
 
 	.page {
-		grid-template-columns: var(--site-max-width, $site-max-width) 1fr;
+		grid-template-columns: calc(var(--site-max-width) - 40rem) 1fr;
 	}
 
 	/* we don't actually want it to grow, though! just stick to the side */
