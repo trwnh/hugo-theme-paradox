@@ -118,9 +118,13 @@
 	}
 	/* tables */
 	table {text-align: center;}
-	thead {font-weight: 700;}
+	thead {
+		font-weight: 700;
+		background: var(--ui-overlay);
+		color: var(--ui-overlay-text);
+	}
 	th, td {
-		border: 1px solid black;
+		border: 1px solid var(--ui-text);
 		padding: 0.5em;
 	}
 	/* {{<hint>}} shortcode */
