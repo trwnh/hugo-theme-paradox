@@ -23,13 +23,22 @@
 		margin-top: 1em;
 		> li {
 			margin-bottom: 1em;
+			> a {
+				display: block;
+				margin-bottom: 1rem;
+			}
 		}
 	}
-	li {line-height: 2}
 	.sub-menu {
 		margin-left: 1em;
+		display: flex;
+		flex-flow: column;
+		gap: 0.5rem;
+		li {
+			line-height: 1.5;
+		}
 		li::marker {
-			content: '⟣ ';
+			content: '→ ';
 		}
 		.sub-menu li::marker {
 			content: '↳ ';

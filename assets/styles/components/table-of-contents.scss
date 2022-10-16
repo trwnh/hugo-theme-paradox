@@ -1,0 +1,27 @@
+.toc-title {
+	margin-bottom: 0.5em;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: var(--ui-text-muted);
+}
+#TableOfContents {
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+	li {
+		margin: 0;
+		line-height: 1.5;
+	}
+	li > ul { /* indent subheadings */
+		margin: 0;
+		margin-left: 1em;
+	}
+	ol {
+		list-style: none;
+		margin: 0;
+	}
+	li > ol {
+		margin-left: 1em;
+	}
+}

@@ -1,0 +1,17 @@
+.breadcrumbs {
+	display: flex;
+	flex-flow: row wrap;
+	li:not(:first-child) {
+		margin-left: 1rem;
+		margin-bottom: 1rem;
+	}
+	li::marker {
+		content: "> ";
+	}
+	li:first-child::marker {
+		content: "";
+	}
+	li:first-child {
+		margin-left: 0;
+	}
+}

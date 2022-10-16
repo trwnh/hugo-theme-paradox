@@ -1,4 +1,4 @@
-.page {
+.content {
 	/* text */
 	h1 {font-size: 1.8em}
 	h2 {font-size: 1.6em}
@@ -15,6 +15,7 @@
 	p {
 		line-height: 2;
 		margin-bottom: 1em;
+		max-width: 80ch;
 	}
 	a {
 		word-wrap: break-word;
@@ -90,15 +91,36 @@
 	}
 	pre {
 		font-family: monospace;
-		background: #333;
-		color: white;
+		background: var(--ui-overlay);
+		color: var(--ui-overlay-text);
 		padding: 1em;
 		line-height: 1.4;
-		overflow-x: scroll;
+		overflow-x: auto;
+		white-space: pre;
+		display: grid;
+		tab-size: 3;
 		margin-bottom: 1em;
 	}
 	code {
 		font-family: monospace;
+		background: var(--ui-overlay);
+		color: var(--ui-overlay-text);
+		padding: 0.25rem;
+	}
+	:not(.highlight) > pre {
+		line-height: 1.5;
+		background: var(--ui-overlay);
+		padding: 1em;
+	}
+	pre code {
+		background: inherit;
+		padding: 0;
+	}
+	pre code > span {
+		padding: 0 1em;
+	}
+	.highlight pre {
+		padding: 1em 0;
 	}
 	/* figures */
 	figure {
@@ -162,25 +184,25 @@
 			content: ']';
 		}
 	}
-	/* toc */
-	.toc-title {
-		margin-bottom: 0.5em;
-		font-weight: 900;
-		text-transform: uppercase;
-		color: var(--ui-text-muted);
-	}
-	#TableOfContents {
-		ul {
-			list-style: none;
-			margin: 0;
-		}
-		li {
-			margin: 0;
-			line-height: 1.5;
-		}
-		li > ul { /* indent subheadings */
-			margin: 0;
-			margin-left: 1em;
+	/* the actual footnotes section */
+	.footnotes {
+		hr {
+			display: flex;
+			align-items: center;
+			border: 0;
+			&:before {
+				content: 'Footnotes';
+				color: var(--ui-text);
+				text-transform: uppercase;
+				font-weight: 900;
+				font-size: 0.8em;
+			}
+			&:after {
+				content: '';
+				width: 100%;
+				margin-left: 1rem;
+				border-bottom: 1px solid var(--ui-text-muted);
+			}
 		}
 	}
 }

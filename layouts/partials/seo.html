@@ -1,10 +1,6 @@
 {{ $icon := "images/icon.png" | absURL }}
 <link rel="shortcut icon" href='{{ $icon }}' sizes="765x765">
-{{ if .IsPage }}
-	{{ with .Params.tags }}
-	<meta name="keywords" content='{{ delimit . " "}}'>
-	{{ end }}
-{{ end }}
+{{ if .IsPage }}{{ with .Params.tags }}<meta name="keywords" content='{{ delimit . " "}}'>{{ end }}{{ end }}
 {{ if .IsHome }}<title>{{ .Site.Title }}</title>
 <title itemprop="name">{{ .Site.Title }}</title>
 <meta property="og:title" content="{{ .Site.Title }}" />

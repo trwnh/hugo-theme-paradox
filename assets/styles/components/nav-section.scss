@@ -1,0 +1,37 @@
+.section-nav {
+	.container {
+		display: grid;
+		grid-gap: 1em;
+	}
+	a {
+		border-radius: 0.25rem;
+		display: flex;
+		padding: 1em;
+		gap: 1em;
+		text-decoration: none;
+		background: var(--ui-overlay);
+		color: var(--ui-overlay-text);
+		&:focus {
+			padding: 1em;
+			border: none;
+		}
+	}
+	.previous {
+		justify-content: start;
+	}
+	.arrow {
+		text-decoration: none;
+		color: inherit;
+		display: grid;
+		place-items: center;
+		font-size: 2em;
+	}
+	@media (min-width: 30rem) {
+		.container {
+			grid-template-columns: 1fr 1fr;
+		}
+		.next {
+			grid-column: 2;
+		}
+	}
+}

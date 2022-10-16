@@ -1,12 +1,14 @@
 {{ define "main" }}
 <main>
-	<article class="page">
+	<article class="page" {{- if .Param "autonumbering" }} autonumbering {{- end }}>
 		<header class="section page-header">
 			<div class="container">
+				{{ partial "breadcrumbs.html" . }}
 				<h1 class="page-title">{{ .Title }}</h1>
-				<p class="page-summary">{{.Page.Summary}}</p>
+				<p class="page-summary">{{.Page.Summary | plainify}}</p>
 				
-				<p class="lastmod">Last modified <datetime class="date">{{ .Lastmod.Format "Mon Jan 2, 2006" }}</datetime><span class="edit-link"> - <a href='{{if eq .Site.Params.forge "github"}}{{printf "https://github.com/%s/edit/%s/%s/%s" .Site.Params.repo .Site.Params.branch .Site.Language.ContentDir .File.Path}}{{else if eq .Site.Params.forge "gitea"}}{{printf "%s/%s/_edit/%s/%s/%s" .Site.Params.forgeUrl .Site.Params.repo .Site.Params.branch (cond (isset .Site.Language "ContentDir") .Site.Language.ContentDir "content") .File.Path}}{{else}}#{{end}}'>Edit this page</a></span></p>
+				<p class="lastmod">Last modified <datetime class="date">{{ .Lastmod.Format "Mon Jan 2, 2006" }}</datetime><span class="edit-link"><br><a href='{{if eq .Site.Params.forge "github"}}{{printf "https://github.com/%s/edit/%s/%s/%s" .Site.Params.repo .Site.Params.branch .Site.Language.ContentDir .File.Path}}{{else if eq .Site.Params.forge "gitea"}}{{printf "%s/%s/_edit/%s/%s/%s" .Site.Params.forgeUrl .Site.Params.repo .Site.Params.branch (cond (isset .Site.Language "ContentDir") .Site.Language.ContentDir "content") .File.Path}}{{else}}#{{end}}'>Edit this page</a></span></p>
+
 				{{ partial "i18nlist.html" . }}
 			</div>
 		</header>
@@ -21,6 +23,12 @@
 				{{ .Content }}
 			</div>
 		</section>
+		{{ partial "nav-section.html" . }}
+		<footer class="section page-footer">
+			<div class="container">
+				{{ partial "page-footer.html" . }}
+			</div>
+		</footer>
 	</article>
 </main>
 {{ end }}

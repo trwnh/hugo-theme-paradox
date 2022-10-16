@@ -4,6 +4,7 @@
 			<img class="site-icon" height="32" src="{{.Site.Params.icon}}">
 			<p class="site-title">{{.Site.Params.title}}</p>
 		</a>
+		{{ partial "search/search-form.html" . }}
 		{{ partial "nav-header.html" . }}
 	</div>
 </header>

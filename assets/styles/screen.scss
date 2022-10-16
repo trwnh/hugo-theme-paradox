@@ -1,12 +1,21 @@
 @import "common/reset";
 @import "common/colors";
 @import "common/base";
-@import "common/page";
+@import "common/content";
 
 @import "components/site-header";
-@import "components/header-menu";
-@import "components/docs-menu";
+@import "components/nav-header";
+@import "components/nav-docs";
 @import "components/site-footer";
+
+@import "components/single/page-header";
+@import "components/breadcrumbs";
+@import "components/table-of-contents";
+@import "components/nav-section";
+
+@import "features/headings";
+@import "features/syntax-highlighting";
+@import "features/search";
 
 @import "screen/layout";
 @import "screen/links";

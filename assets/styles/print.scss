@@ -1,15 +1,22 @@
 @import "common/reset";
 @import "common/colors";
 @import "common/base";
-@import "common/page";
+@import "common/content";
 
 @import "components/site-header";
+@import "components/single/page-header";
+@import "components/breadcrumbs";
+@import "components/table-of-contents";
+@import "features/headings";
 
+#search-form,
 .header-nav,
 .docs-nav,
 .site-footer,
 .edit-link,
-.footnote-backref
+.footnote-backref,
+.heading__anchor-link,
+.section-nav
 {
 	display: none;
 }

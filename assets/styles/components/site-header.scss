@@ -3,7 +3,7 @@
 	flex-flow: row;
 	align-items: center;
 	gap: 1em;
-	padding: 4px;
+	text-decoration: none;
 }
 .site-icon {
 	height: 2em;
@@ -24,10 +24,11 @@
 .site-header {padding: 1em 0;}
 
 .site-header a {
-	text-decoration: none;
+	font-weight: 500;
 }
 .site-header .container {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	gap: 1em;
 }
