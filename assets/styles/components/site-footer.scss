@@ -15,6 +15,7 @@
 		display: flex;
 		flex-flow: row wrap;
 		gap: 1em;
+		a:after {display: none;}
 	}
 	
 	.social-nav {

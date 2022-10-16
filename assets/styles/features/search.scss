@@ -7,11 +7,14 @@
 
 .search-results strong {
 	font-weight: 900;
+	background: var(--primary-accent-transparent);
+	color: var(--ui-text-bold);
 }
 
 #search-results {
 	display: flex;
 	flex-flow: column;
+	max-width: 80ch;
 }
 
 #search-results li:not(:first-child) {
@@ -20,6 +23,16 @@
 
 #search-results li {
 	padding: 1em 0;
+}
+
+.search-result-page-title {
+	font-size: 1.25em;
+	display: block;
+	margin-bottom: 1rem;
+}
+
+.search-result-item p {
+	line-height: 1.5;
 }
 
 #search-form {
