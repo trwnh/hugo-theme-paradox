@@ -1,0 +1,13 @@
+<nav class="social-nav">
+	<ul class="menu">
+		{{ $currentPage := . }}
+		{{ range .Site.Menus.social }}
+		<li
+			class='{{ .Identifier }}'>
+			<a href="{{ .URL }}">
+				{{ .Pre }}
+			</a>
+		</li>
+		{{ end }}
+	</ul>
+</nav>
