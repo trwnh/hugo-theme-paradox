@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-{{ $screen := resources.Get "styles/screen.scss" | toCSS | minify | fingerprint }}
+{{ $screen := resources.Get "styles/screen.scss" | resources.ExecuteAsTemplate "style.screen.scss" . | toCSS | minify | fingerprint }}
 <link rel="stylesheet"
 	href="{{ $screen.Permalink }}"
 	integrity="{{ $screen.Data.Integrity }}"
 	media="screen" />
-{{ $print := resources.Get "styles/print.scss" | toCSS | minify | fingerprint }}
+{{ $print := resources.Get "styles/print.scss" | resources.ExecuteAsTemplate "style.print.scss" . | toCSS | minify | fingerprint }}
 <link rel="stylesheet"
 	href="{{ $print.Permalink }}"
 	integrity="{{ $print.Data.Integrity }}"
