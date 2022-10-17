@@ -11,13 +11,14 @@
 		text-decoration: none;
 		background: var(--ui-overlay);
 		color: var(--ui-overlay-text);
+		box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
 		&:focus {
 			padding: 1em;
 			border: none;
 		}
 	}
-	.previous {
-		justify-content: start;
+	.previous, .next {
+		justify-content: space-between;
 	}
 	.arrow {
 		text-decoration: none;

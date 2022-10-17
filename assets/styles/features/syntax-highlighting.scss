@@ -6,19 +6,19 @@
 	--keyword: #3361a7;
 	--class: #f57900;
 	--variable: #c049dd;
-	--number: #53ca24;
+	--number: #32940b;
 	--operator: #5400c2;
-	--highlight: rgb(196, 196, 196);
+	--highlight: rgb(230, 230, 196);
 
 	@media (prefers-color-scheme: dark) {
 	
-		--error: #cc0000;
+		--error: #f85e5e;
 		--keyword: #e0d56e;
-		--class: #8700f5;
-		--variable: #008eb9;
+		--class: #b872f1;
+		--variable: #68aff1;
 		--number: #53ca24;
 		--operator: #fffd6f;
-		--highlight: #555;
+		--highlight: #444;
 	}
 
 }
@@ -42,7 +42,7 @@
 /* KeywordReserved */ .chroma .kr { color: var(--keyword); font-weight: bold }
 /* KeywordType */ .chroma .kt { color: var(--keyword); font-weight: bold }
 /* Name */ .chroma .n { color: var(--ui-text-bold) }
-/* NameAttribute */ .chroma .na { color: var(--ui-text-bold) }
+/* NameAttribute */ .chroma .na { color: var(--keyword) }
 /* NameBuiltin */ .chroma .nb { color: var(--name) }
 /* NameBuiltinPseudo */ .chroma .bp { color: #3465a4 }
 /* NameClass */ .chroma .nc { color: var(--ui-text-bold) }
@@ -54,7 +54,7 @@
 /* NameFunctionMagic */ .chroma .fm { color: var(--ui-text-bold) }
 /* NameLabel */ .chroma .nl { color: var(--name) }
 /* NameNamespace */ .chroma .nn { color: var(--ui-text-bold) }
-/* NameOther */ .chroma .nx { color: var(--ui-text-bold)}
+/* NameOther */ .chroma .nx { color: var(--class)}
 /* NameProperty */ .chroma .py { color: var(--ui-text-bold) }
 /* NameTag */ .chroma .nt { color: var(--keyword); font-weight: bold }
 /* NameVariable */ .chroma .nv { color: var(--variable) }
@@ -76,7 +76,7 @@
 /* LiteralStringInterpol */ .chroma .si { color: var(--variable) }
 /* LiteralStringOther */ .chroma .sx { color: var(--variable) }
 /* LiteralStringRegex */ .chroma .sr { color: var(--variable) }
-/* LiteralStringSingle */ .chroma .s1 { color: var(--variable) }
+/* LiteralStringSingle */ .chroma .s1 { color: var(--number) }
 /* LiteralStringSymbol */ .chroma .ss { color: var(--variable) }
 /* LiteralNumber */ .chroma .m { color: var(--number); font-weight: bold }
 /* LiteralNumberBin */ .chroma .mb { color: var(--number); font-weight: bold }
@@ -87,7 +87,7 @@
 /* LiteralNumberOct */ .chroma .mo { color: var(--number); font-weight: bold }
 /* Operator */ .chroma .o { color: var(--operator); font-weight: bold }
 /* OperatorWord */ .chroma .ow { color: var(--keyword); font-weight: bold }
-/* Punctuation */ .chroma .p { color: var(--ui-text-bold); font-weight: bold }
+/* Punctuation */ .chroma .p { color: var(--variable); font-weight: bold }
 /* Comment */ .chroma .c { color: var(--ui-text-muted); font-style: italic }
 /* CommentHashbang */ .chroma .ch { color: var(--ui-text-muted); font-style: italic }
 /* CommentMultiline */ .chroma .cm { color: var(--ui-text-muted); font-style: italic }
@@ -107,4 +107,4 @@
 /* GenericSubheading */ .chroma .gu { color: var(--ui-text-bold); font-weight: bold }
 /* GenericTraceback */ .chroma .gt { color: var(--error); font-weight: bold }
 /* GenericUnderline */ .chroma .gl { color: var(--ui-text-bold); text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: var(--ui-text-muted); text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: var(--ui-text-muted); }

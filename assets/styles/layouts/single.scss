@@ -1,0 +1,21 @@
+.breadcrumbs {
+	margin-bottom: 1rem;
+}
+.page-title {
+	font-size: 2em;
+	margin-bottom: 1rem;
+}
+.page-summary {
+	line-height: 1.5;
+	max-width: 80ch;
+}
+.lastmod {
+	margin-top: 1rem;
+	line-height: 1.5;
+	color: var(--ui-text-muted);
+}
+.language-list {
+	display: flex;
+	flex-flow: wrap;
+	list-style: none;
+}

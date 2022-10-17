@@ -1,0 +1,21 @@
+.hint {
+	padding: 1em;
+	line-height: 2;
+	margin: 1rem 0;
+}
+.hint,
+.hint.info,
+.hint.tip {
+	background: rgba(142, 226, 142, 0.2);
+	border-left: 4px solid rgb(142, 226, 142);
+}
+
+.hint.warning {
+	background: rgba(218, 226, 142, 0.2);
+	border-left: 4px solid rgb(218, 226, 142);
+}
+
+.hint.danger {
+	background: rgba(226, 142, 142, 0.2);
+	border-left: 4px solid rgb(226, 142, 142);
+}

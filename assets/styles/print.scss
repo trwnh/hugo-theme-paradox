@@ -4,10 +4,13 @@
 @import "common/content";
 
 @import "components/site-header";
-@import "components/single/page-header";
 @import "components/breadcrumbs";
 @import "components/table-of-contents";
 @import "features/headings";
+@import "shortcodes/hint";
+
+@import "layouts/list";
+@import "layouts/single";
 
 #search-form,
 .header-nav,

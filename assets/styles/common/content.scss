@@ -94,7 +94,7 @@
 		background: var(--ui-overlay);
 		color: var(--ui-overlay-text);
 		padding: 1em;
-		line-height: 1.4;
+		line-height: 2;
 		overflow-x: auto;
 		white-space: pre;
 		display: grid;
@@ -148,27 +148,6 @@
 	th, td {
 		border: 1px solid var(--ui-text);
 		padding: 0.5em;
-	}
-	/* {{<hint>}} shortcode */
-	.hint {
-		padding: 1em;
-		line-height: 2;
-	}
-	.hint,
-	.hint.info,
-	.hint.tip {
-		background: rgba(142, 226, 142, 0.2);
-		border-left: 4px solid rgb(142, 226, 142);
-	}
-	
-	.hint.warning {
-		background: rgba(218, 226, 142, 0.2);
-		border-left: 4px solid rgb(218, 226, 142);
-	}
-	
-	.hint.danger {
-		background: rgba(226, 142, 142, 0.2);
-		border-left: 4px solid rgb(226, 142, 142);
 	}
 	/* hugo-specific citation footnote */
 	cite sup {

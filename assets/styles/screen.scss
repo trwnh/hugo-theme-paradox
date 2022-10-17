@@ -7,7 +7,6 @@
 @import "components/nav-docs";
 @import "components/site-footer";
 
-@import "components/single/page-header";
 @import "components/breadcrumbs";
 @import "components/table-of-contents";
 @import "components/nav-section";
@@ -15,6 +14,10 @@
 @import "features/headings";
 @import "features/syntax-highlighting";
 @import "features/search";
+@import "features/links";
 
-@import "screen/layout";
-@import "screen/links";
+@import "shortcodes/hint";
+
+@import "layouts/list";
+@import "layouts/single";
+@import "layouts/responsive";

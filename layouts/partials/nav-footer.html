@@ -3,7 +3,7 @@
 			{{ $currentPage := . }}
 			{{ range .Site.Menus.footer }}
 			<li
-				class='{{ if or ($currentPage.IsMenuCurrent "footer" .) (eq $currentPage.Section .Identifier) }}active{{ end }}'>
+				class='{{ .Identifier }}{{ if or ($currentPage.IsMenuCurrent "footer" .) (eq $currentPage.Section .Identifier) }} active{{ end }}'>
 				<a href="{{ .URL | relLangURL }}">
 					{{ .Pre }}
 					<span>{{ .Name }}</span>

@@ -45,6 +45,7 @@
 #search-input {
 	background: var(--ui-overlay);
 	color: var(--ui-overlay-text);
+	filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.15));
 	border-radius: 100rem;
 	border: 0;
 	padding: 0.5rem 1rem;
@@ -61,4 +62,5 @@
 	color: var(--primary-accent-text);
 	border-radius: 4px;
 	height: 2rem;
+	filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.15));
 }

@@ -118,7 +118,9 @@
 
 	/* also make the page header line up */
 
-	.page-header {
+	.page-header,
+	.list
+	{
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
 		> .container {

@@ -1,0 +1,19 @@
+.list .container {
+
+}
+
+.list-item {
+	margin-bottom: 2rem;
+	&__title {
+		display: inline-block;
+		margin-bottom: 0.5rem;
+		font-size: 1.25em;
+	}
+	&__summary {
+		margin-bottom: 0.5rem;
+		line-height: 1.5;
+	}
+	&__date {
+		color: var(--ui-text-muted);
+	}
+}

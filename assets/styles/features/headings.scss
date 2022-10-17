@@ -70,5 +70,11 @@ article[autonumbering] {
 	#TableOfContents li:before {
 		content: counters(item, ".") ". ";
 		counter-increment: item;
+		font-family: monospace;
+	}
+	#TableOfContents ol ol,
+	#TableOfContents ul ul
+	{
+		margin-left: 0;
 	}
 }

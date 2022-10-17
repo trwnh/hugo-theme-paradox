@@ -1,10 +1,15 @@
 <nav class="section-nav">
 	<div class="container">
-	{{ with .PrevInSection }}
+	{{ $page := .Page }}
+	{{ with .Next }}
+	{{ if eq .FirstSection $page.FirstSection }}
 	<a class="previous" href="{{.Permalink}}"><span class="arrow">←</span><span class="text">Previous page:<br/>{{.Title}}</span></a>
 	{{ end }}
-	{{ with .NextInSection }}
+	{{ end }}
+	{{ with .Prev }}
+	{{ if eq .FirstSection $page.FirstSection }}
 	<a class="next" href="{{.Permalink}}"><span class="text">Next page:<br/>{{.Title}}</span><span class="arrow">→</span></a>
+	{{ end }}
 	{{ end }}
 	</div>
 </nav>
