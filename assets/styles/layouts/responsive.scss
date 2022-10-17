@@ -96,6 +96,7 @@
 	{
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
+		padding: 0;
 		> * {
 			grid-column: 2;
 		}
@@ -105,27 +106,18 @@
 		}
 	}
 
-	.section-nav,
-	.page-footer .container
-	{
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
-		> .container {
-			padding: 0;
-			grid-column: 2;
-		}
-	}
-
-	/* also make the page header line up */
+	/* also make the middle stuff line up */
 
 	.page-header,
-	.list
+	.list,
+	.section-nav,
+	.page-footer
 	{
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
 		> .container {
-			grid-column: 2;
 			padding: 0;
+			grid-column: 2;
 		}
 	}
 
