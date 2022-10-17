@@ -27,19 +27,3 @@ a:hover {
 @media (prefers-reduced-motion) {
 	a:link {transition: none}
 }
-
-/* mark external links */
-
-a[href^="http"]:after {
-	content: "🡕";
-}
-
-a[href^="{{.Site.BaseURL}}"]:after
-{
-	display: none !important;
-}
-
-a[href^="http://localhost"]:after
-{
-	display: none !important;
-}

@@ -1,0 +1,15 @@
+<style>
+a[href^="http"]:after {
+	content: "🡕";
+}
+
+a[href^="{{.Site.BaseURL}}"]:after
+{
+	display: none !important;
+}
+
+a[href^="http://localhost"]:after
+{
+	display: none !important;
+}
+</style>
