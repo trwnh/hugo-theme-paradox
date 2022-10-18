@@ -50,6 +50,8 @@
 		display: none;
 	}
 
+	.docs-nav, .page-header {padding: 1rem 0;}
+
 }
 
 /* [responsive] move the toc to its own column */
@@ -62,32 +64,25 @@
 		display: grid;
 		grid-template-columns: 40rem 1fr;
 	}
-	.page .page-header {
-		grid-column: span 2
-	}
-	.page .section {
+	.page-header,
+	.content,
+	.section-nav,
+	.page-footer
+	{
 		grid-column: 1;
 	}
-	.page .toc {
+	.toc {
 		grid-column: 2;
-		grid-row: span 2;
+		grid-row: span 4;
 		padding: 0;
+		min-height: calc(100 * var(--vh, 1vh) - var(--header-height) - var(--footer-height));
 	}
 	.page .toc .container {
 		margin: 0;
 		position: sticky;
-		top: 0;
-		max-height: calc(100vh - var(--header-height) - var(--footer-height));
+		top: 1rem;
+		max-height: calc(100 * var(--vh, 1vh) - var(--header-height) - var(--footer-height));
 		overflow-y: auto;
-	}
-}
-
-/* [responsive] let the <main> expand until max width of site */
-
-@media (min-width: 80rem) {
-
-	.page {
-		grid-template-columns: 1fr 20rem; /* toc now visually balanced with menu */
 	}
 
 	/* start limiting content since it can exceed 80ch now */
@@ -95,8 +90,7 @@
 	.content .container
 	{
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
-		padding: 0;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 80ch) minmax(0, 1fr);
 		> * {
 			grid-column: 2;
 		}
@@ -106,22 +100,36 @@
 		}
 	}
 
-	/* also make the middle stuff line up */
-
 	.page-header,
 	.list,
 	.section-nav,
 	.page-footer
 	{
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
+		grid-template-columns: minmax(0, 1fr) minmax(0, 80ch) minmax(0, 1fr);
+		padding: 0 1rem;
 		> .container {
-			padding: 0;
 			grid-column: 2;
+			padding: 0;
 		}
 	}
 
+	.page-header {
+		padding-top: 1rem;
+	}
+	.page-footer {
+		padding-bottom: 1rem;
+	}
+
 }
+
+@media (min-width: 80rem) {
+	.page {
+		display: grid;
+		grid-template-columns: 1fr 20rem;
+	}
+}
+
 
 /* [responsive] fixed layout after reaching maxwidth */
 
