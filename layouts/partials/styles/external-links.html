@@ -1,14 +1,11 @@
 <style>
-a[href^="http"]:after {
-	content: "🡕";
-}
 
-a[href^="{{.Site.BaseURL}}"]:after
+a[href^="{{.Site.BaseURL}}"] svg
 {
 	display: none !important;
 }
 
-a[href^="http://localhost"]:after
+a[href^="http://localhost"] svg
 {
 	display: none !important;
 }

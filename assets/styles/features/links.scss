@@ -27,3 +27,16 @@ a:hover {
 @media (prefers-reduced-motion) {
 	a:link {transition: none}
 }
+
+a:link[target=_blank] {
+	svg {
+		margin-inline-start: 0.35em;
+		margin-inline-end: 0.15em;
+		vertical-align: baseline;
+		font-size: 0.65em;
+	}
+}
+
+a:link[title] {
+	text-decoration-style: dotted;
+}
