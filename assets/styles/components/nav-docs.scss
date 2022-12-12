@@ -21,12 +21,18 @@
 	padding: 1em 0;
 	.menu {
 		margin-top: 1em;
-		> li, > details {
+		> li, > details summary {
 			margin-bottom: 1em;
-			> a {
-				display: block;
-				margin-bottom: 1rem;
-			}
+		}
+	}
+	details {
+		margin-bottom: 1em;
+	}
+	summary {
+		font-weight: 700;
+		cursor: pointer;
+		&::marker {
+			content: '';
 		}
 	}
 	.sub-menu {
@@ -47,7 +53,7 @@
 			content: '↳ ';
 		}
 	}
-	.section-title > a {
+	.active > a {
 		font-weight: 700;
 		text-decoration: none;
 		color: inherit;

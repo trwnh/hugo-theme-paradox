@@ -7,9 +7,9 @@
 			</svg> Documentation Menu</label>
 		<ul class="menu">
 			<a id="menu" href="#top">Skip menu</a>
-			{{ $currentPage := . }}
+			{{ $currentPage := .Page }}
 			{{ range .Site.Menus.docs }}
-				{{ $active := or ($currentPage.IsMenuCurrent "docs" .) (eq $currentPage.Section .Identifier)}}
+				{{ $active := hasPrefix $currentPage.RelPermalink .Page.RelPermalink }}
 				<details {{- if $active }} open{{ end -}}>
 					{{ if .HasChildren }}
 					<summary class='section-title{{- if $active }} active{{ end -}}'>
@@ -19,14 +19,16 @@
 					</summary>
 					<ul class="sub-menu" data-depth=1>
 					{{ range .Children }}
+					{{ $active := hasPrefix $currentPage.RelPermalink .Page.RelPermalink }}
 						{{ if .HasChildren}}
-							<li class='{{- if $active }} active{{ end -}}'>
+							<li class='{{- if $active }}active{{ end -}}'>
 							<a href="{{ .URL | relLangURL }}">
 							{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
 							</a>
 							<ul class="sub-menu" data-depth=2>
 							{{ range .Children }}
-								<li class='{{- if $active }} active{{ end -}}'>
+							{{ $active := hasPrefix $currentPage.RelPermalink .Page.RelPermalink }}
+								<li class='{{- if $active }}active{{ end -}}'>
 								<a href="{{ .URL | relLangURL }}">
 								{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
 								</a>
@@ -34,7 +36,7 @@
 							{{ end }}{{/* range .Children (subsubmenu) */}}
 							</ul>
 						{{ else }}{{/* not .HasChildren (subsubmenu) */}}
-							<li class='{{- if $active }} active{{ end -}}'>
+							<li class='{{- if $active }}active{{ end -}}'>
 							<a href="{{ .URL | relLangURL }}">
 							{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
 							</a>
@@ -43,7 +45,7 @@
 					{{ end }}
 			</ul>
 			{{ else }}
-			<li class='{{- if $active }} active{{ end -}}'>
+			<li class='{{- if $active }}active{{ end -}}'>
 				<a href="{{ .URL | relLangURL }}">
 					{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
 				</a>
