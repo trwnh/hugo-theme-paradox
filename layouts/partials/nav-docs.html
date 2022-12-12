@@ -9,64 +9,45 @@
 			<a id="menu" href="#top">Skip menu</a>
 			{{ $currentPage := . }}
 			{{ range .Site.Menus.docs }}
-			{{ $active := or ($currentPage.IsMenuCurrent "docs" .) (eq $currentPage.Section .Identifier)}}
-			{{ if .HasChildren }}
-			<details
-				class='section-title
-				{{- if $active }} active{{ end -}}
-				'
-				{{- if $active }} open{{ end -}}>
-				<summary href="{{ .URL | relLangURL }}">
-					{{ .Pre }}
-					<span>{{ .Name }}</span>
-					{{ .Post }}
-				</summary>
-				<ul class="sub-menu">
+				{{ $active := or ($currentPage.IsMenuCurrent "docs" .) (eq $currentPage.Section .Identifier)}}
+				<details class='section-title{{- if $active }} active{{ end -}}' {{- if $active }} open{{ end -}}>
+					{{ if .HasChildren }}
+					<summary href="{{ .URL | relLangURL }}">
+						{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
+					</summary>
+					<ul class="sub-menu" data-depth=1>
 					{{ range .Children }}
-					{{ if .HasChildren}}
-					<li
-						class='{{- if $active }} active{{ end -}}'>
-						<a href="{{ .URL | relLangURL }}">
-							{{ .Pre }}
-							<span>{{ .Name }}</span>
-							{{ .Post }}
-						</a>
-						<ul class="sub-menu">
+						{{ if .HasChildren}}
+							<li class='{{- if $active }} active{{ end -}}'>
+							<a href="{{ .URL | relLangURL }}">
+							{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
+							</a>
+							<ul class="sub-menu" data-depth=2>
 							{{ range .Children }}
-							<li
-								class='{{- if $active }} active{{ end -}}'>
+								<li class='{{- if $active }} active{{ end -}}'>
 								<a href="{{ .URL | relLangURL }}">
-									{{ .Pre }}
-									<span>{{ .Name }}</span>
-									{{ .Post }}
+								{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
 								</a>
+								</li>
+							{{ end }}{{/* range .Children (subsubmenu) */}}
+							</ul>
+						{{ else }}{{/* not .HasChildren (subsubmenu) */}}
+							<li class='{{- if $active }} active{{ end -}}'>
+							<a href="{{ .URL | relLangURL }}">
+							{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
+							</a>
 							</li>
-							{{ end }}
-						</ul>
-			</details>
+						{{ end }}{{/* range .Children */}}
+					{{ end }}
+			</ul>
 			{{ else }}
-			<li
-				class='{{- if $active }} active{{ end -}}'>
+			<li class='{{- if $active }} active{{ end -}}'>
 				<a href="{{ .URL | relLangURL }}">
-					{{ .Pre }}
-					<span>{{ .Name }}</span>
-					{{ .Post }}
+					{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
 				</a>
 			</li>
 			{{ end }}
-			{{ end }}
-		</ul>
-		</li>
-		{{ else }}
-		<li
-			class='{{- if $active }} active{{ end -}}'>
-			<a href="{{ .URL | relLangURL }}">
-				{{ .Pre }}
-				<span>{{ .Name }}</span>
-				{{ .Post }}
-			</a>
-		</li>
-		{{ end }}
+		</details>
 		{{ end }}
 		</ul>
 	</div>
