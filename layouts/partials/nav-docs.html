@@ -10,10 +10,12 @@
 			{{ $currentPage := . }}
 			{{ range .Site.Menus.docs }}
 				{{ $active := or ($currentPage.IsMenuCurrent "docs" .) (eq $currentPage.Section .Identifier)}}
-				<details class='section-title{{- if $active }} active{{ end -}}' {{- if $active }} open{{ end -}}>
+				<details {{- if $active }} open{{ end -}}>
 					{{ if .HasChildren }}
-					<summary href="{{ .URL | relLangURL }}">
+					<summary class='section-title{{- if $active }} active{{ end -}}'>
+						<a>
 						{{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
+						</a>
 					</summary>
 					<ul class="sub-menu" data-depth=1>
 					{{ range .Children }}
