@@ -3,6 +3,8 @@
 	font-weight: 900;
 	text-transform: uppercase;
 	color: var(--ui-text-muted);
+	transition:
+		color var(--color-crossfade-duration) var(--color-crossfade-ease);
 }
 #TableOfContents {
 	ul {

@@ -35,6 +35,8 @@
 	.copyright a {
 		text-decoration: none;
 		color: var(--ui-text-bold);
+		transition:
+			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 	}
 
 }

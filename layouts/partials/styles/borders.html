@@ -1,18 +1,26 @@
 <style>
 .site-header {
-	border-bottom: 1px solid var(--ui-overlay);
+	border-bottom: 1px solid;
+	border-color: var(--ui-border, rgba(0,0,0,0));
+	transition: border-color var(--color-crossfade-duration) var(--color-crossfade-ease);
 }
 .site-footer {
-	border-top: 1px solid var(--ui-overlay);
+	border-top: 1px solid;
+	border-color: var(--ui-border, rgba(0,0,0,0));
+	transition: border-color var(--color-crossfade-duration) var(--color-crossfade-ease);
 }
 @media (min-width: 60rem) {
 	.docs-nav {
-		border-right: 1px solid var(--ui-overlay);
+		border-right: 1px solid;
+		border-color: var(--ui-border, rgba(0,0,0,0));
+		transition: border-color var(--color-crossfade-duration) var(--color-crossfade-ease);
 	}
 }
 @media (min-width: 75rem) {
 	.toc {
-		border-left: 1px solid var(--ui-overlay);
+		border-left: 1px solid;
+		border-color: var(--ui-border, rgba(0,0,0,0));
+		transition: border-color var(--color-crossfade-duration) var(--color-crossfade-ease);
 	}
 }
 </style>

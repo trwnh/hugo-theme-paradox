@@ -1,10 +1,23 @@
 <header class="site-header">
 	<div class="container">
-		<a href="/" class="site-masthead">
-			<img class="site-icon" height="32" src="{{.Site.Params.icon}}">
-			<p class="site-title">{{.Site.Params.title}}</p>
-		</a>
+		<div class='hang-left'>
+			<a href="/" class="site-masthead">
+				{{ with .Site.Params.masthead.image }}
+				<img class="site-masthead__image" height="32" src="{{.}}">
+				{{ end }}
+				{{ with resources.Get .Site.Params.masthead.svg }}
+				{{ .Content | safeHTML }}
+				{{ end }}
+				{{if .Site.Params.masthead.hideTitle}}
+				{{ else }}
+				<p class="site-title">{{or .Site.Params.masthead.title .Site.Title}}</p>
+				{{ end }}
+			</a>
+			{{ partial "color-switcher.html" . }}
+		</div>
+		{{ if in .Site.Params.search.showIn "header" }}
 		{{ partial "search/search-form.html" . }}
+		{{ end }}
 		{{ partial "nav-header.html" . }}
 	</div>
 </header>

@@ -17,7 +17,10 @@
 		<section class="content section">
 			<div class="container">
 				{{ .Content }}
-				<p class="lastmod">Last modified <datetime class="date">{{ .Lastmod.Format "Mon Jan 2, 2006" }}</datetime><span class="edit-link"><br><a href='{{if eq .Site.Params.forge "github"}}{{printf "https://github.com/%s/edit/%s/%s/%s" .Site.Params.repo .Site.Params.branch .Site.Language.ContentDir .File.Path}}{{else if eq .Site.Params.forge "gitea"}}{{printf "%s/%s/_edit/%s/%s/%s" .Site.Params.forgeUrl .Site.Params.repo .Site.Params.branch (cond (isset .Site.Language "ContentDir") .Site.Language.ContentDir "content") .File.Path}}{{else}}#{{end}}'>Edit this page</a></span></p>
+				<p class="lastmod">Last modified 
+					<datetime class="date">{{ .Lastmod.Format "Mon Jan 2, 2006" }}</datetime>
+					{{ partial "edit-link.html" . }}
+				</p>
 			</div>
 		</section>
 	</article>

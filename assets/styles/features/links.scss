@@ -8,15 +8,15 @@ a:link {
 
 a:visited {
 	color: var(--link-visited);
+	transition:
+		color var(--color-crossfade-duration) var(--color-crossfade-ease);
 }
 
-a:focus {
-	outline: none;
-	background: var(--primary-accent);
-	color: var(--primary-accent-text);
+*:focus {
+	outline: 1px dashed;
+	outline-offset: 8px;
 	border-radius: 2px;
 	text-decoration: none;
-	padding: 4px;
 }
 
 a:hover {

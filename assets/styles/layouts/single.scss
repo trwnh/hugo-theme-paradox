@@ -8,14 +8,19 @@
 .page-summary {
 	line-height: 1.5;
 	max-width: 80ch;
+	margin-bottom: 1rem;
 }
 .lastmod {
 	margin-top: 1rem;
 	line-height: 1.5;
 	color: var(--ui-text-muted);
+	transition:
+		color var(--color-crossfade-duration) var(--color-crossfade-ease);
 }
 .language-list {
+	margin-top: 0.5rem;
 	display: flex;
 	flex-flow: wrap;
 	list-style: none;
+	gap: 1em;
 }

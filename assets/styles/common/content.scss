@@ -42,6 +42,9 @@
 			padding: 0.25em;
 			background: var(--ui-overlay);
 			color: var(--ui-overlay-text);
+			transition:
+				background var(--color-crossfade-duration) var(--color-crossfade-ease),
+				color var(--color-crossfade-duration) var(--color-crossfade-ease);
 		}
 	}
 	@supports not #{'selector\(:has(kbd))'} {
@@ -51,6 +54,9 @@
 			padding: 0.25em;
 			background: var(--ui-overlay);
 			color: var(--ui-overlay-text);
+			transition:
+				background var(--color-crossfade-duration) var(--color-crossfade-ease),
+				color var(--color-crossfade-duration) var(--color-crossfade-ease);
 		}
 		/* and prevent double-styling for nested keys */
 		kbd kbd {
@@ -63,11 +69,16 @@
 		--pad-x-highlight: 0.125em;
 		padding-left: var(--pad-x-highlight);
 		padding-right: var(--pad-x-highlight);
+		transition:
+			background var(--color-crossfade-duration) var(--color-crossfade-ease),
+			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 	}
 	abbr[title]:after {
 		content: '?';
 		font-size: var(--script-size);
 		color: var(--ui-text-muted);
+		transition:
+			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 	}
 	/* lists */
 	ul {list-style: disc; margin: 1em 0;}
@@ -93,6 +104,9 @@
 		font-family: monospace;
 		background: var(--ui-overlay);
 		color: var(--ui-overlay-text);
+		transition:
+			background var(--color-crossfade-duration) var(--color-crossfade-ease),
+			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 		padding: 1em;
 		line-height: 2;
 		overflow-x: auto;
@@ -105,11 +119,16 @@
 		font-family: monospace;
 		background: var(--ui-overlay);
 		color: var(--ui-overlay-text);
+		transition:
+			background var(--color-crossfade-duration) var(--color-crossfade-ease),
+			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 		padding: 0.25rem;
 	}
 	:not(.highlight) > pre {
 		line-height: 1.5;
 		background: var(--ui-overlay);
+		transition:
+			background var(--color-crossfade-duration) var(--color-crossfade-ease);
 		padding: 1em;
 	}
 	pre code {
@@ -133,6 +152,9 @@
 	figcaption {
 		background: #212121;
 		color: white;
+		transition:
+			background var(--color-crossfade-duration) var(--color-crossfade-ease),
+			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 		font-style: italic;
 		padding: 1em;
 		font-size: 0.8em;
@@ -144,10 +166,16 @@
 		font-weight: 700;
 		background: var(--ui-overlay);
 		color: var(--ui-overlay-text);
+		transition:
+			background var(--color-crossfade-duration) var(--color-crossfade-ease),
+			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 	}
 	th, td {
-		border: 1px solid var(--ui-text);
+		border: 1px solid;
+		border-color: var(--ui-text);
 		padding: 0.5em;
+		transition:
+			border-color var(--color-crossfade-duration) var(--color-crossfade-ease);
 	}
 	/* hugo-specific citation footnote */
 	cite sup {
@@ -172,6 +200,8 @@
 			&:before {
 				content: 'Footnotes';
 				color: var(--ui-text);
+				transition:
+					color var(--color-crossfade-duration) var(--color-crossfade-ease);
 				text-transform: uppercase;
 				font-weight: 900;
 				font-size: 0.8em;
@@ -180,7 +210,11 @@
 				content: '';
 				width: 100%;
 				margin-left: 1rem;
-				border-bottom: 1px solid var(--ui-text-muted);
+				border-bottom: 1px solid;
+				border-color: var(--ui-text-muted);
+				transition:
+					border-color var(--color-crossfade-duration) var(--color-crossfade-ease);
+
 			}
 		}
 	}

@@ -3,7 +3,6 @@
 .toggle-menu {
 	display: none;
 }
-
 .toggle-menu:not(:checked) ~ .menu {
 	display: none;
 }
@@ -15,25 +14,38 @@
 	text-transform: uppercase;
 }
 
+
+.toggle-menu__label {
+	margin-bottom: 2em
+}
+
 /* navigation menu */
 
 .docs-nav {
 	padding: 1em 0;
+	#search-form {
+		margin-bottom: 2em;
+	}
 	.menu {
 		margin-top: 1em;
-		> li, > details summary {
+		> li {
+			margin-bottom: 2em;
+			font-weight: 700;
+		}
+		> details summary {
 			margin-bottom: 1em;
 		}
+		display: flex;
+		flex-flow: column;
 	}
 	details {
+		display: flex;
 		margin-bottom: 1em;
+		&[open] {margin-bottom: 2em;}
 	}
 	summary {
 		font-weight: 700;
 		cursor: pointer;
-		&::marker {
-			content: '';
-		}
 	}
 	.sub-menu {
 		margin-left: 1em;
@@ -45,6 +57,7 @@
 		}
 		.sub-menu {
 			margin-top: 0.5rem;
+			margin-left: 2em;
 		}
 		li::marker {
 			content: '→ ';
@@ -52,11 +65,16 @@
 		.sub-menu li::marker {
 			content: '↳ ';
 		}
+		li.active::marker {
+			content: '• ';
+		}
 	}
 	.active > a {
 		font-weight: 700;
 		text-decoration: none;
-		color: inherit;
+		color: var(--ui-text-bold);
+		transition:
+			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 	}
 }
 

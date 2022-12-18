@@ -1,0 +1,46 @@
+{{ with .File }}
+	{{ $path := .Path }}
+	{{ $editLink := ""}}
+	{{ if $.Site.Params.editLink.enabled }}
+		{{ with $.Site.Params.editLink }}
+			{{ if eq .forge "github" }}
+				{{/*
+					link of the form:
+					https://github.com/name/repo/edit/main/content/en/path/to/foo.md
+				*/}}
+				{{ $editLink =
+					(
+						printf "https://github.com/%s/edit/%s/%s/%s"
+						.repo
+						.branch
+						$.Site.Params.contentDir
+						$path
+					)
+				}}
+			{{ else if eq .forge "gitea" }}
+				{{/*
+					link of the form:
+					gitea.example/name/repo/_edit/main/content/en/path/to/foo.md
+				*/}}
+				{{
+					$editLink = 
+					(
+						printf "%s/%s/_edit/%s/%s/%s"
+						.forgeUrl
+						.repo
+						.branch
+						$.Site.Params.contentDir
+						$path
+					)
+				}}
+			{{ end }}
+		{{ end }}
+		{{ with $editLink }}
+			<span class="edit-link">
+				<br>
+				<a href='{{.}}'>Edit this page</a>
+			</span>
+		{{ else }}
+		{{ end }}
+	{{ end }}
+{{ end }}
