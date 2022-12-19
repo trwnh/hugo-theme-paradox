@@ -86,7 +86,7 @@
 	ol {list-style: decimal; margin: 1em 0;}
 	dl {margin: 1em 0; line-height: 1.4;}
 	dt {font-weight: 700;}
-	dd {margin-left: 1em;}
+	dd {margin-left: 1em; margin-bottom: 1em;}
 	/* block elements */
 	img {
 		width: 100%;
@@ -132,7 +132,6 @@
 		padding: 1em;
 	}
 	pre code {
-		background: inherit;
 		padding: 0;
 	}
 	pre code > span {

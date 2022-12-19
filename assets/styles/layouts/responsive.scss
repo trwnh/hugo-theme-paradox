@@ -1,3 +1,16 @@
+.page > * > .container
+{
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 80ch) minmax(0, 1fr);
+	> * {
+		grid-column: 2;
+	}
+	> img, figure
+	{
+		grid-column: 1 / span 3;
+	}
+}
+
 /* [responsive] more room to breathe above mobile sizes */
 
 @media (min-width: 30rem) {
@@ -63,7 +76,7 @@
 
 /* [responsive] move the toc to its own column */
 
-@media (min-width: 75rem) {
+@media (min-width: 90rem) {
 	body {
 		grid-template-columns: auto 1fr;
 	}
@@ -128,20 +141,13 @@
 
 }
 
-@media (min-width: 80rem) {
-	.page {
-		display: grid;
-		grid-template-columns: 1fr 20rem;
-	}
-}
-
 
 /* [responsive] fixed layout after reaching maxwidth */
 
 @media (min-width: $site-max-width) {
 
 	body {
-		grid-template-columns: 1fr 20rem calc(var(--site-max-width) - 20rem) 1fr
+		grid-template-columns: 1fr var(--sidebar-width) calc(var(--site-max-width) - var(--sidebar-width)) 1fr
 	}
 
 	.docs-nav {grid-column: 2;}
@@ -156,7 +162,7 @@
 	/* except now the page is fixed to maxwidth and the toc can "grow" */
 
 	.page {
-		grid-template-columns: calc(var(--site-max-width) - 40rem) 1fr;
+		grid-template-columns: 1fr var(--sidebar-width);
 	}
 
 	/* we don't actually want it to grow, though! just stick to the side */

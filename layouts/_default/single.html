@@ -3,7 +3,6 @@
 	<article class="page" {{- if .Param "autonumbering" }} autonumbering {{- end }}>
 		<header class="section page-header">
 			<div class="container">
-				{{ partial "breadcrumbs.html" . }}
 				<h1 class="page-title">{{ .Title }}</h1>
 				<p class="page-summary">{{.Page.Summary | plainify}}</p>
 				
@@ -16,8 +15,11 @@
 		</header>
 		<aside class="toc section">
 			<div class="container">
-				<p class="toc-title">Page outline</p>
-			{{ .TableOfContents }}
+				{{ partial "breadcrumbs.html" . }}
+				<details open>
+					<summary class="toc-title">Page outline</summary>
+					{{ .TableOfContents }}
+				</details>
 			</div>
 		</aside>
 		<section class="content section">

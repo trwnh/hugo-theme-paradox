@@ -4,20 +4,12 @@
 	li {
 		margin-bottom: 1rem;
 		margin-right: 0.5rem;
-	}
-	li:not(:first-child) {
 		margin-left: 1rem;
 		a {
 			margin-left: 0.5rem;
 		}
-	}
-	li::marker {
-		content: "> ";
-	}
-	li:first-child::marker {
-		content: "";
-	}
-	li:first-child {
-		margin-left: 0;
+		&::marker {
+			content: "» ";
+		}
 	}
 }

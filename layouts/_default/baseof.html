@@ -17,7 +17,7 @@
 {{- $theme := resources.Get "styles/screen.scss" | toCSS }}
 {{- with resources.Get "styles/custom.scss" }}
 {{- $custom := . | toCSS }}
-{{- $screen := slice $theme $custom | resources.Concat "styles/screen.css" | minify | fingerprint }}
+{{- $screen := slice $theme $custom | resources.Concat "assets/screen.css" | minify | fingerprint }}
 <link rel="stylesheet"
 	href="{{ $screen.Permalink }}"
 	integrity="{{ $screen.Data.Integrity }}"
@@ -34,7 +34,7 @@
 {{- $theme := resources.Get "scripts/main.js" | js.Build "script.js" | minify | fingerprint }}
 {{ with resources.Get "scripts/custom.js" }}
 {{ $custom := . }}
-{{ $script := slice $theme $custom | resources.Concat "scripts/main.js" | js.Build "script.js" | minify | fingerprint}}
+{{ $script := slice $theme $custom | resources.Concat "assets/main.js" | js.Build "script.js" | minify | fingerprint}}
 <script type="text/javascript"
 	src="{{ $script.Permalink }}"
 	integrity="{{ $script.Data.Integrity }}">

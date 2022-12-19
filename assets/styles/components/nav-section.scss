@@ -1,7 +1,7 @@
 @import "common/mixins.scss";
 
 .section-nav {
-	.container {
+	.buttons {
 		display: grid;
 		grid-gap: 1em;
 	}
@@ -38,11 +38,12 @@
 		font-size: 2em;
 	}
 	@media (min-width: 30rem) {
-		.container {
+		.buttons {
 			grid-template-columns: 1fr 1fr;
 		}
 		.next {
 			grid-column: 2;
 		}
 	}
+	margin-bottom: 2em;
 }

@@ -13,6 +13,10 @@
 
 	--ui-overlay: #ddd;
 	--ui-overlay-text: var(--ui-text);
+
+	--ui-border: #ddd;
+
+	--ui-error: hsl(0, 80%, 50%);
 }
 
 @mixin dark {
@@ -30,6 +34,10 @@
 
 	--ui-overlay: #333;
 	--ui-overlay-text: var(--ui-text);
+
+	--ui-border: #ddd;
+
+	--ui-error: hsl(0, 80%, 50%);
 }
 
 :root {

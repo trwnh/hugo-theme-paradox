@@ -8,7 +8,9 @@
 	{{ else if not .p1.IsHome }}
 	  {{ template "breadcrumb" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
 	{{ end }}
+	{{ if not .p1.IsHome }}
 	<li{{ if eq .p1 .p2 }} class="active"{{ end }}>
 	  <a href="{{ .p1.RelPermalink }}">{{ .p1.Title }}</a>
 	</li>
+	{{ end }}
  {{ end }}
