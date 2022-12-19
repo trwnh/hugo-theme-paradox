@@ -94,11 +94,13 @@
 	}
 	blockquote {
 		font-style: italic;
-		font-size: 1em;
+		font-size: 1.3rem;
 		margin: 1em 0;
-		border-left: 0.25rem solid var(--ui-text-bold);
-		padding-left: 0.75em;
+		padding: 0.5rem 1rem;
 		line-height: 1.4;
+		cite {
+			font-size: 1rem;
+		}
 	}
 	pre {
 		font-family: monospace;
