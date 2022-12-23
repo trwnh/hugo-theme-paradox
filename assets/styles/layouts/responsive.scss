@@ -2,6 +2,7 @@
 {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 80ch) minmax(0, 1fr);
+	max-width: 120ch;
 	> * {
 		grid-column: 2;
 	}
