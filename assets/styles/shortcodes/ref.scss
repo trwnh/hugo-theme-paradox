@@ -17,13 +17,13 @@
 	@media (min-width: 20rem) {
 		grid-template-columns: 3em 1fr;
 	}
-	margin: 1em 0;
+	margin-block: 1em;
 	padding: 1em;
 	border-radius: 6px;
 	text-decoration: none;
 	&__icon {
-		height: 3em;
-		width: 3em;
+		block-size: 3em;
+		inline-size: 3em;
 		grid-column: 1;
 		background: var(--primary-accent);
 		color: var(--primary-accent-text);
@@ -35,8 +35,8 @@
 		grid-column: 2 / -1;
 	}
 	svg {
-		height: 1.5em;
-		width: 1.5em;
+		block-size: 1.5em;
+		inline-size: 1.5em;
 	}
 }
 
@@ -56,7 +56,7 @@
 		font-weight: 700;
 	}
 	&__path {
-		margin-top: 8px;
+		margin-block-start: 8px;
 		display: block;
 		font-family: monospace;
 	}

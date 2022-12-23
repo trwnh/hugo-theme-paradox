@@ -133,10 +133,14 @@
 </style>
 <script>
 var body = document.body;
-var switcher = document.getElementsByClassName('js-toggle')[0];
-var input = document.getElementsByClassName('js-toggle-screenreader-only')[0];
+var switcher = document.getElementsByClassName('js-toggle');
+var input = document.getElementsByClassName('js-toggle-screenreader-only');
 
-switcher.removeAttribute("style")
+console.log(switcher);
+
+for (s of switcher) {
+	s.removeAttribute("style");
+};
 
 input.addEventListener('focus', (event) => {
 	switcher.classList.add('js-toggle--focus');
@@ -164,6 +168,10 @@ if (this.classList.contains('js-toggle--checked')) {
 	}, 100);
 }
 })
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+	localStorage.setItem('colorMode', 'dark');
+}
 
 //Check Storage. Keep user preference on page reload
 if (localStorage.getItem('colorMode') == 'dark') {

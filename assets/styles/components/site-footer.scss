@@ -1,7 +1,7 @@
 .site-footer {
 	display: flex;
 	align-items: center;
-	padding: 1em 0;
+	padding-block: 1em;
 
 	hr {display: none;}
 
@@ -29,7 +29,7 @@
 	}
 
 	a[href='#top'] {
-		margin-left: auto;
+		margin-inline-start: auto;
 	}
 	
 	.copyright a {

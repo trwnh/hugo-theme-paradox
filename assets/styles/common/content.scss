@@ -8,14 +8,14 @@
 	h6 {font-size: 1em}
 	h1, h2, h3, h4, h5, h6 {
 		line-height: 1.2;
-		margin-bottom: 1rem;
-		margin-top: 2rem;
+		margin-block-start: 2rem;
+		margin-block-end: 1rem;
 		font-weight: 700;
 	}
 	p {
 		line-height: 2;
-		margin-bottom: 1em;
-		max-width: 80ch;
+		margin-block-end: 1em;
+		max-inline-size: 80ch;
 	}
 	a {
 		word-wrap: break-word;
@@ -28,7 +28,7 @@
 	sup {
 		position: relative;
 		font-size: var(--script-size);
-		top: -1em;
+		inset-block-start: -1em;
 	}
 	sub {
 		position: relative;
@@ -66,9 +66,8 @@
 	mark {
 		background: var(--primary-accent-transparent);
 		color: var(--ui-text);
-		--pad-x-highlight: 0.125em;
-		padding-left: var(--pad-x-highlight);
-		padding-right: var(--pad-x-highlight);
+		--pad-highlight: 0.125em;
+		padding-inline: var(--pad-highlight);
 		transition:
 			background var(--color-crossfade-duration) var(--color-crossfade-ease),
 			color var(--color-crossfade-duration) var(--color-crossfade-ease);
@@ -81,21 +80,21 @@
 			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 	}
 	/* lists */
-	ul {list-style: disc; margin: 1em 0;}
-	li {margin-bottom: 1em; line-height: 1.4; margin-left: 1em;}
-	ol {list-style: decimal; margin: 1em 0;}
-	dl {margin: 1em 0; line-height: 1.4;}
+	ul {list-style: disc; margin-block: 1em;}
+	li {margin-inline-start: 1em; margin-block-end: 1em; line-height: 1.4;}
+	ol {list-style: decimal; margin-block: 1em;}
+	dl {margin-block: 1em; line-height: 1.4;}
 	dt {font-weight: 700;}
-	dd {margin-left: 1em; margin-bottom: 1em;}
+	dd {margin-inline-start: 1em; margin-block-end: 1em;}
 	/* block elements */
 	img {
-		width: 100%;
-		margin-bottom: 1em;
+		inline-size: 100%;
+		margin-block-end: 1em;
 	}
 	blockquote {
 		font-style: italic;
 		font-size: 1.3rem;
-		margin: 1em 0;
+		margin-block: 1em;
 		padding: 0.5rem 1rem;
 		line-height: 1.4;
 		cite {
@@ -111,11 +110,11 @@
 			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 		padding: 1em;
 		line-height: 2;
-		overflow-x: auto;
+		overflow-inline: auto;
 		white-space: pre;
 		display: grid;
 		tab-size: 3;
-		margin-bottom: 1em;
+		margin-block-end: 1em;
 	}
 	code {
 		font-family: monospace;
@@ -137,29 +136,30 @@
 		padding: 0;
 	}
 	code .line {
-		padding: 0 1em;
+		padding-inline: 1em;
 	}
 	.highlight pre {
-		padding: 1em 0;
+		padding-block: 1em;
 	}
 	/* figures */
 	figure {
-		margin-bottom: 1em;
+		margin-block: 1em;
+		display: grid;
+		place-items: center;
 	}
 	figure img {
-		width: 100%;
-		margin-bottom: -0.125em;
+		inline-size: max-content;
+		max-inline-size: 100%;
+		margin-block-end: -0.125em;
 	}
 	figcaption {
-		background: #212121;
-		color: white;
-		transition:
-			background var(--color-crossfade-duration) var(--color-crossfade-ease),
-			color var(--color-crossfade-duration) var(--color-crossfade-ease);
 		font-style: italic;
-		padding: 1em;
-		font-size: 0.8em;
 		line-height: 1.2;
+		inline-size: 100%;
+		text-align: center;
+		p {
+			margin: 1em auto;
+		}
 	}
 	/* tables */
 	table {text-align: center;}
@@ -209,9 +209,9 @@
 			}
 			&:after {
 				content: '';
-				width: 100%;
-				margin-left: 1rem;
-				border-bottom: 1px solid;
+				inline-size: 100%;
+				margin-inline-start: 1rem;
+				border-block-end: 1px solid;
 				border-color: var(--ui-text-muted);
 				transition:
 					border-color var(--color-crossfade-duration) var(--color-crossfade-ease);

@@ -5,15 +5,12 @@
 	gap: 1em;
 	text-decoration: none;
 	img {
-		height: 2rem;
+		block-size: 2rem;
 	}
 	svg {
-		height: 2rem;
-		width: 100%;
+		block-size: 2rem;
+		inline-size: 100%;
 	}
-}
-.site-icon {
-	height: 2em;
 }
 .site-title {
 	font-weight: 900;
@@ -27,8 +24,8 @@
 .color-switcher {
 	display: grid;
 	place-items: center;
-	margin-left: auto;
-	margin-right: 0.5em;
+	margin-inline-start: auto;
+	margin-inline-end: 0.5em;
 }
 
 .site-header {
@@ -38,7 +35,7 @@
 		justify-content: space-between;
 		gap: 1em;
 	}
-	padding: 1em 0;
+	padding-block: 1em;
 	a {
 		font-weight: 500;
 	}
@@ -46,7 +43,7 @@
 		display: flex;
 		gap: 1em;
 		flex-flow: row wrap;
-		max-width: 100%;
+		max-inline-size: 100%;
 		flex-grow: 1;
 		justify-content: space-between;
 	}

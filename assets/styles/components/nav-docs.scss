@@ -16,39 +16,39 @@
 
 
 .toggle-menu__label {
-	margin-bottom: 2em
+	margin-block-end: 2em
 }
 
 /* navigation menu */
 
 .docs-nav {
-	padding: 1em 0;
+	padding-block: 1em;
 	#search-form {
-		margin-bottom: 2em;
+		margin-block-end: 2em;
 	}
 	.menu {
-		margin-top: 1em;
+		margin-block-start: 1em;
 		> li {
-			margin-bottom: 2em;
+			margin-block-end: 2em;
 			font-weight: 700;
 		}
 		> details summary {
-			margin-bottom: 1em;
+			margin-block-end: 1em;
 		}
 		display: flex;
 		flex-flow: column;
 	}
 	details {
 		display: flex;
-		margin-bottom: 1em;
-		&[open] {margin-bottom: 2em;}
+		margin-block-end: 1em;
+		&[open] {margin-block-end: 2em;}
 	}
 	summary {
 		font-weight: 700;
 		cursor: pointer;
 	}
 	.sub-menu {
-		margin-left: 1em;
+		margin-inline-start: 1em;
 		display: flex;
 		flex-flow: column;
 		gap: 0.5rem;
@@ -56,8 +56,8 @@
 			line-height: 1.5;
 		}
 		.sub-menu {
-			margin-top: 0.5rem;
-			margin-left: 2em;
+			margin-block-start: 0.5rem;
+			margin-inline-start: 2em;
 		}
 		li::marker {
 			content: '→ ';
@@ -80,13 +80,13 @@
 
 /* top of menu link should show only when focused */
 
-#menu {margin-bottom: 1em;}
+#menu {margin-block-end: 1em;}
 #menu:not(:focus) {
 	clip: rect(0 0 0 0); 
 	clip-path: inset(50%);
-	height: 1px;
+	block-size: 1px;
 	overflow: hidden;
 	position: absolute;
 	white-space: nowrap; 
-	width: 1px;
+	inline-size: 1px;
 }
